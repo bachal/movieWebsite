@@ -1,13 +1,18 @@
 import React from 'react';
 import Search from './Search';
 import { MovieList } from './MovieList';
+import { useGlobalContext } from './context';
+import Error from './Error';
+
 
 const Home = () => {
+  const { movies,isError } = useGlobalContext();
+
   return (
     <>
-      <div style={{ backgroundColor: "#545353" }}>
+      <div className="pb-5" style={{ backgroundColor: "#545353" }}>
         <Search />
-        <MovieList />
+        {!isError.showError ? <MovieList />:<Error />}
       </div>
     </>
   )

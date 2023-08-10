@@ -13,7 +13,6 @@ const SingleMovie = () => {
   const { id } = useParams();
   useEffect(() => {
     getMovie(`${api_url}&i=${id}`)
-
   }, [id])
   const getMovie = async (givenUrl) => {
     setIsLoading(true)
@@ -37,7 +36,6 @@ const SingleMovie = () => {
   }
 
   return (
-
     <>
       <div className="movieCard container-fluid">
         <div className="row">
